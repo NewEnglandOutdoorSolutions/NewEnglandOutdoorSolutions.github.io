@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New England Outdoor Solutions | Premium Landscaping</title>
+    <title>New England Outdoor Solutions | Professional Landscaping MA</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         :root {
-            --primary: #2c4a3e; /* Deep New England Forest Green */
-            --secondary: #d3a25d; /* Warm Gold/Stone Accent */
-            --dark: #222222; /* Charcoal for text */
-            --light: #f9f9f9; /* Off-white for backgrounds */
+            --primary: #1e332b; /* Deep New England Forest Green */
+            --accent: #d3a25d; /* Warm Gold/Stone */
+            --slate: #475569;
+            --light: #f8fafc;
             --white: #ffffff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--white); }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--slate); line-height: 1.6; background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Header & Navigation */
-        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .logo { color: var(--primary); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 600; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+        /* Top Bar */
+        .top-bar { background: var(--primary); color: var(--white); padding: 10px 20px; font-size: 0.9rem; text-align: center; }
+        .top-bar a { color: var(--accent); text-decoration: none; font-weight: bold; margin: 0 15px; }
+
+        /* Header */
+        header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 20px; }
+        .logo { color: var(--primary); font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent); font-size: 1.8rem; }
+        .nav-links a { text-decoration: none; color: var(--primary); margin-left: 25px; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
         /* Hero Section */
         .hero { 
-            background: linear-gradient(rgba(44, 74, 62, 0.8), rgba(44, 74, 62, 0.6)), url('https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?q=80&w=1600') no-repeat center center/cover;
-            height: 70vh; 
+            background: linear-gradient(rgba(30, 51, 43, 0.7), rgba(30, 51, 43, 0.7)), url('https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?q=80&w=1600') no-repeat center center/cover;
+            height: 85vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -38,119 +46,184 @@
             text-align: center; 
             padding: 20px;
         }
-        .hero h2 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
-        .hero p { font-size: 1.3rem; margin-bottom: 30px; max-width: 600px; }
-        .btn { background-color: var(--secondary); color: var(--white); padding: 15px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; transition: background 0.3s; }
-        .btn:hover { background-color: #b88944; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; max-width: 900px; line-height: 1.1; }
+        .hero p { font-size: 1.4rem; margin-bottom: 40px; max-width: 700px; font-weight: 400; color: #e2e8f0; }
+        .cta-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .btn { padding: 18px 35px; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; transition: 0.3s; display: inline-block; cursor: pointer; }
+        .btn-primary { background: var(--accent); color: var(--white); border: 2px solid var(--accent); }
+        .btn-primary:hover { background: transparent; color: var(--white); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
 
-        /* Sections Layout */
-        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .section-title { font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; position: relative; padding-bottom: 10px; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--secondary); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        /* Stats Section */
+        .stats { background: var(--light); padding: 40px 20px; display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; border-bottom: 1px solid #e2e8f0; }
+        .stat-item { text-align: center; }
+        .stat-item h4 { font-size: 2rem; color: var(--primary); margin-bottom: 5px; }
+        .stat-item p { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.8rem; }
 
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
-        .service-card { background: var(--light); padding: 40px 30px; border-radius: 8px; border-top: 5px solid var(--primary); transition: transform 0.3s; }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-card h3 { margin-bottom: 15px; color: var(--primary); }
+        /* Services */
+        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary); position: relative; padding-bottom: 15px; display: inline-block; }
+        .section-header h2::after { content: ''; width: 80px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .service-card { background: var(--white); padding: 50px 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid transparent; transition: 0.4s; }
+        .service-card:hover { transform: translateY(-10px); border-bottom-color: var(--accent); }
+        .service-card i { font-size: 3rem; color: var(--accent); margin-bottom: 25px; display: block; }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
 
-        /* Contact Form Section */
-        .contact-bg { background-color: var(--light); }
-        form { max-width: 600px; margin: 0 auto; text-align: left; background: var(--white); padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        /* Contact Section */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .contact-info h3 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+        .info-link { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; text-decoration: none; color: inherit; transition: 0.3s; }
+        .info-link i { font-size: 1.5rem; color: var(--accent); background: var(--light); padding: 15px; border-radius: 50%; }
+        .info-link:hover { color: var(--accent); }
+        .info-link div b { display: block; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
+
+        /* Form Styling */
+        form { background: var(--light); padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; }
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
-        form button { background: var(--primary); color: var(--white); border: none; padding: 15px 30px; width: 100%; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-        form button:hover { background: #1e332b; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--primary); font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+        form button { background: var(--primary); color: var(--white); border: none; padding: 20px; width: 100%; border-radius: 6px; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        form button:hover { background: var(--accent); }
 
-        footer { background: var(--primary); color: var(--white); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+        footer { background: var(--primary); color: var(--white); padding: 60px 20px; text-align: center; }
+        .footer-logo { font-size: 1.5rem; margin-bottom: 20px; color: var(--white); text-transform: uppercase; font-weight: bold; }
+        .footer-logo span { color: var(--accent); }
 
-        /* Mobile Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 15px; }
-            .hero h2 { font-size: 2.2rem; }
-            .service-card:hover { transform: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">
+        Serving Weymouth, Quincy, Braintree & South Shore 
+        <a href="tel:6177747154"><i class="fa-solid fa-phone"></i> 617-774-7154</a>
+    </div>
+
     <header>
         <div class="nav-container">
-            <div class="logo"><strong>New England</strong> Outdoor Solutions</div>
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <div><strong>NEW ENGLAND</strong><br><small>OUTDOOR SOLUTIONS</small></div>
+            </div>
             <nav class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#about">About</a>
+                <a href="#about">Why Us</a>
                 <a href="#contact">Contact</a>
+                <a href="#contact" style="background: var(--primary); color: white; padding: 10px 20px; border-radius: 4px; margin-left: 20px;">Free Estimate</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h2>Premium Massachusetts Landscaping</h2>
-        <p>Crafting breathtaking outdoor spaces with local expertise. Dedicated to reliable lawn maintenance and seasonal cleanups.</p>
-        <a href="#contact" class="btn">Get Your Free Estimate</a>
+        <h1>Massachusetts Property Stewardship & Landscaping</h1>
+        <p>Reliable, professional lawn maintenance and property cleanups for residential and commercial estates.</p>
+        <div class="cta-group">
+            <a href="#contact" class="btn btn-primary">Get A Free Estimate</a>
+            <a href="tel:6177747154" class="btn btn-outline">Call Now</a>
+        </div>
     </section>
 
+    <div class="stats">
+        <div class="stat-item"><h4>100%</h4><p>Reliability</p></div>
+        <div class="stat-item"><h4>MA</h4><p>Local Experts</p></div>
+        <div class="stat-item"><h4>24/7</h4><p>Communication</p></div>
+        <div class="stat-item"><h4>FREE</h4><p>Estimates</p></div>
+    </div>
+
     <section id="services" class="section">
-        <h2 class="section-title">Our Services</h2>
+        <div class="section-header">
+            <h2>Our Core Services</h2>
+        </div>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Lawn Care & Maintenance</h3>
-                <p>Precision mowing, edging, fertilization, weed control, and seasonal aeration to keep your grass thick, healthy, and vibrant.</p>
+                <i class="fa-solid fa-mound"></i>
+                <h3>Lawn Maintenance</h3>
+                <p>Precision mowing, professional edging, fertilization, and weed control. We keep your turf thick, healthy, and perfectly striped every single week.</p>
             </div>
             <div class="service-card">
+                <i class="fa-solid fa-broom"></i>
                 <h3>Property Cleanups</h3>
-                <p>Complete spring leaf removal, fresh mulch installation, shrub trimming, and thorough fall preparation to keep your yard immaculate.</p>
+                <p>Spring leaf removal, mulch installation, shrub trimming, and heavy fall prep. We ensure your property is the cleanest in the neighborhood.</p>
             </div>
             <div class="service-card">
+                <i class="fa-solid fa-city"></i>
                 <h3>Residential & Commercial</h3>
-                <p>Whether it is maintaining a neighborhood home or managing a commercial storefront, we provide dependable, top-tier property maintenance.</p>
+                <p>From single-family homes to commercial storefronts, we provide dependable maintenance schedules that ensure high curb appeal year-round.</p>
             </div>
         </div>
     </section>
 
-    <div style="background-color: var(--light);">
-        <section id="about" class="section">
-            <h2 class="section-title">Why Choose Us?</h2>
-            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
-                At New England Outdoor Solutions, we pride ourselves on reliability, meticulous attention to detail, and deep knowledge of local New England landscapes. From weekly mowing to massive seasonal yard transformations, we deliver dependable, premium results that elevate your home's curb appeal.
-            </p>
-        </section>
-    </div>
+    <section id="contact" class="section" style="background: #fff; border-top: 1px solid #eee;">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="section-header" style="text-align: left;">
+                    <h2>Connect With Us</h2>
+                </div>
+                <p style="margin-bottom: 40px;">Ready for a professional landscape solution? Call, email, or fill out the form. We respond to all inquiries within 24 hours.</p>
+                
+                <a href="tel:6177747154" class="info-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <b>Call or Text</b>
+                        617-774-7154
+                    </div>
+                </a>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">Request A Free Estimate</h2>
-        <p style="margin-bottom: 30px; color: #666;">Fill out the form below and we will get back to you within 24 hours to schedule a consultation.</p>
-        
-        <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
-            <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" name="name" required placeholder="John Smith">
+                <a href="mailto:NewEnglandOutdoorSolutions@gmail.com" class="info-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <b>Email Us</b>
+                        NewEnglandOutdoorSolutions@gmail.com
+                    </div>
+                </a>
+
+                <div class="info-link">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <b>Service Area</b>
+                        Weymouth, Quincy, Braintree & Surrounding MA
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" required placeholder="(555) 555-5555">
+
+            <div id="estimate-form">
+                <form action="https://formspree.io/f/xvgowvoz" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="617-555-5555">
+                    </div>
+                    <div class="form-group">
+                        <label>Town in MA</label>
+                        <input type="text" name="location" required placeholder="e.g. Weymouth">
+                    </div>
+                    <div class="form-group">
+                        <label>Services Needed</label>
+                        <textarea name="message" rows="4" required placeholder="Weekly mowing, Fall cleanup, etc..."></textarea>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none">
+                    <button type="submit">Submit Estimate Request</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" name="email" required placeholder="john@example.com">
-            </div>
-            <div class="form-group">
-                <label>Town / Location in MA</label>
-                <input type="text" name="location" required placeholder="e.g. Weymouth, Quincy, Braintree">
-            </div>
-            <div class="form-group">
-                <label>Services Needed</label>
-                <textarea name="message" rows="5" required placeholder="Tell us about your project (e.g., weekly mowing, mulch installation, fall cleanup)..."></textarea>
-            </div>
-            <button type="submit">Submit Request</button>
-        </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 New England Outdoor Solutions. All Rights Reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; color: #aaa;">Proudly serving communities across Massachusetts.</p>
+        <div class="footer-logo">NEW ENGLAND <span>OUTDOOR SOLUTIONS</span></div>
+        <p>&copy; 2024. Premium Landscaping & Property Maintenance.<br>Based in Weymouth, Massachusetts.</p>
     </footer>
 
 </body>
