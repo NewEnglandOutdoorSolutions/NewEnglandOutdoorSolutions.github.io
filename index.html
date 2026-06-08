@@ -73,6 +73,12 @@
         .service-card i { font-size: 3rem; color: var(--accent); margin-bottom: 25px; display: block; }
         .service-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
 
+        /* About Section Layout */
+        .about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-content { text-align: left; }
+        .about-content p { margin-bottom: 20px; font-size: 1.1rem; }
+        .about-image { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
         /* Contact Section */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
         .contact-info h3 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
@@ -97,7 +103,7 @@
         /* Mobile Adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .contact-container, .about-section { grid-template-columns: 1fr; gap: 40px; }
             .nav-links { display: none; }
         }
     </style>
@@ -163,6 +169,21 @@
         </div>
     </section>
 
+    <div style="background-color: var(--light);">
+        <section id="about" class="section">
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <h2>Why Choose Us?</h2>
+                    </div>
+                    <p>At New England Outdoor Solutions, we understand that your yard is an extension of your home or commercial enterprise. That's why we focus exclusively on providing premium lawn maintenance and thorough property cleanups across the Massachusetts South Shore.</p>
+                    <p>Unlike landscape contractors who bounce from job to job, our pride is built entirely on absolute operational reliability, clear customer lines of communication, and meticulous attention to lawn edging and finish work.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb18865?q=80&w=800" alt="Beautifully manicured landscaping lawn" class="about-image">
+            </div>
+        </section>
+    </div>
+
     <section id="contact" class="section" style="background: #fff; border-top: 1px solid #eee;">
         <div class="contact-container">
             <div class="contact-info">
@@ -197,7 +218,7 @@
             </div>
 
             <div id="estimate-form">
-                <form action="https://formspree.io/f/xvgowvoz" method="POST">
+                <form action="https://formspree.io/f/mgobkjrq" method="POST">
                     <div class="form-group">
                         <label>Full Name</label>
                         <input type="text" name="name" required placeholder="John Smith">
@@ -223,7 +244,7 @@
 
     <footer>
         <div class="footer-logo">NEW ENGLAND <span>OUTDOOR SOLUTIONS</span></div>
-        <p>&copy; 2024. Premium Landscaping & Property Maintenance.<br>Based in Weymouth, Massachusetts.</p>
+        <p>&copy; 2026. Premium Landscaping & Property Maintenance.<br>Based in Weymouth, Massachusetts.</p>
     </footer>
 
 </body>
